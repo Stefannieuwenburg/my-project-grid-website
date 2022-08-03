@@ -1,3 +1,11 @@
+# Build a responsive grid css website
+
+my project build a responsive grid website:
+
+installing styled-components
+React icons Font Awesome icons
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
