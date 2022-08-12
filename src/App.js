@@ -1,8 +1,10 @@
-import { FaChartPie, FaGlobe, FaCog, FaUser } from "react-icons/fa";
+import React, { Fragment } from "react";
+import GlobalStyle from "./GlobalStyle";
 import styled from "styled-components";
-import LampBoardImage from '../src/Images/lampboard.jpg';
-import "./App.css";
-
+import { FaChartPie, FaGlobe, FaCog, FaUser } from "react-icons/fa";
+import LampBoardImage from "../src/Images/lampboard.jpg";
+import img from './Images/laptop.jpg'
+// import "./App.css";
 
 const Wrapper = styled.section`
     display: grid;
@@ -55,11 +57,11 @@ const Button = styled.button`
 `;
 
 const TopContainer = styled.section`
-    display:grid;
-    grid-gap:20px;
+    display: grid;
+    grid-gap: 20px;
     grid-template-areas:
-    'Showcase Showcase TopBoxa'
-    'Showcase Showcase TopBoxb';
+        "Showcase Showcase TopBoxa"
+        "Showcase Showcase TopBoxb";
 `;
 
 const Title = styled.h1`
@@ -71,17 +73,20 @@ const Title = styled.h1`
 const Showcase = styled.div`
     grid-area: Showcase;
     min-height: 400px;
-    background-image: url(http://source.unsplash.com/random/401x400);
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0.342),
+            rgba(0, 0, 0, 0.342)
+        ),
+        url(${img});
     background-size: cover;
     background-position: center;
     padding: 3rem;
     border-radius: 20px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
     box-shadow: var(--shadow);
-
 `;
 
 const TopBoxa = styled.div`
@@ -121,8 +126,7 @@ const Price = styled.p`
 const Boxes = styled.div`
     display: grid;
     grid-gap: 20px;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 `;
 
 const Box = styled.div`
@@ -151,7 +155,6 @@ const Info = styled.section`
 `;
 const BoxImage = styled.div`
     img {
-        
         border-radius: 20px;
         border: 3px solid green;
     }
@@ -162,151 +165,178 @@ const Portfolio = styled.section`
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     img {
-        width:100%;
+        width: 100%;
         border-radius: 20px;
         border: 3px solid green;
     }
 `;
 
-const Footer = styled.section`
-    margin-top:2rem;
-    background: var(--dark);
-    color:var(--light);
+
+const FooterCopyricht = styled.p`
+    margin-top: 1, 2rem;
     text-align: center;
-    padding:1rem;
-    border-radius: 20px;
-    border: 3px solid green;
-    font-size:1.2rem;
-
+    color: var(--Gray);
+    font-size: 1.2rem;
+    margin: 0.2rem;
 `;
-
 
 function App() {
     return (
-        <Wrapper>
-            {/* Nav section */}
-            <Nav>
-                <ul>
-                    <li>
-                        <a href="#2">Home</a>
-                    </li>
-                    <li>
-                        <a href="#3">About</a>
-                    </li>
-                    <li>
-                        <a href="#4">Service</a>
-                    </li>
-                    <li>
-                        <a href="#5">Contact</a>
-                    </li>
-                </ul>
-            </Nav>
-            {/* Top Container */}
-            <TopContainer>
-                <Showcase>
-                    <Title>Your web presence</Title>
-                    <Paragraph>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Rem odio non libero, tempore provident unde.
-                    </Paragraph>
-                    <Button>
-                        <a href="#l">Read More</a>
-                    </Button>
-                </Showcase>{" "}
-                <TopBoxa>
-                    <h4> Membership</h4>
-                    <Price>$199/mo</Price>
-                    <Button>
-                        <a href="#5">buy now</a>
-                    </Button>
-                </TopBoxa>
-                <TopBoxb>
-                    <h4> Pro Membership</h4>
-                    <Price>$299/mo</Price>
-                    <Button>
-                        <a href="#5">buy now</a>
-                    </Button>
-                </TopBoxb>
-            </TopContainer>
-            {/* Boxes Section */}
-            <Boxes>
-                <Box>
-                    <FaGlobe size={"30px"} />
-                    <h3>Marketing</h3>
-                    <ParagraphBox>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Non incidunt inventore vitae necessitatibus consequuntur
-                        voluptate?
-                    </ParagraphBox>
-                </Box>
-                <Box>
-                    <FaCog size={"30px"} />
-                    <h3>Development</h3>
-                    <ParagraphBox>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Non incidunt inventore vitae necessitatibus consequuntur
-                        voluptate?
-                    </ParagraphBox>
-                </Box>
-                <Box>
-                    <FaUser size={"30px"} />
-                    <h3>Support</h3>
-                    <ParagraphBox>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Non incidunt inventore vitae necessitatibus consequuntur
-                        voluptate?
-                    </ParagraphBox>
-                </Box>
-                <Box>
-                    <FaChartPie size={"30px"} />
-                    <h3>Analytics</h3>
-                    <ParagraphBox>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Non incidunt inventore vitae necessitatibus consequuntur
-                        voluptate?
-                    </ParagraphBox>
-                </Box>
-            </Boxes>
-            {/* info section */}
-            <Info>
-                <BoxImage>
-                    {" "}
+        <Fragment>
+            <GlobalStyle />
+            <Wrapper>
+                {/* Nav section */}
+                <Nav>
+                    <ul>
+                        <li>
+                            <a href="#2">Home</a>
+                        </li>
+                        <li>
+                            <a href="#3">About</a>
+                        </li>
+                        <li>
+                            <a href="#4">Service</a>
+                        </li>
+                        <li>
+                            <a href="#5">Contact</a>
+                        </li>
+                    </ul>
+                </Nav>
+                {/* Top Container */}
+                <TopContainer>
+                    <Showcase>
+                        <Title>Your web presence</Title>
+                        <Paragraph>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Rem odio non libero, tempore provident unde.
+                        </Paragraph>
+                        <Button>
+                            <a href="#l">Read More</a>
+                        </Button>
+                    </Showcase>{" "}
+                    <TopBoxa>
+                        <h4> Membership</h4>
+                        <Price>$199/mo</Price>
+                        <Button>
+                            <a href="#5">buy now</a>
+                        </Button>
+                    </TopBoxa>
+                    <TopBoxb>
+                        <h4> Pro Membership</h4>
+                        <Price>$299/mo</Price>
+                        <Button>
+                            <a href="#5">buy now</a>
+                        </Button>
+                    </TopBoxb>
+                </TopContainer>
+                {/* Boxes Section */}
+                <Boxes>
+                    <Box>
+                        <FaGlobe size={"30px"} />
+                        <h3>Marketing</h3>
+                        <ParagraphBox>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Non incidunt inventore vitae necessitatibus
+                            consequuntur voluptate?
+                        </ParagraphBox>
+                    </Box>
+                    <Box>
+                        <FaCog size={"30px"} />
+                        <h3>Development</h3>
+                        <ParagraphBox>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Non incidunt inventore vitae necessitatibus
+                            consequuntur voluptate?
+                        </ParagraphBox>
+                    </Box>
+                    <Box>
+                        <FaUser size={"30px"} />
+                        <h3>Support</h3>
+                        <ParagraphBox>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Non incidunt inventore vitae necessitatibus
+                            consequuntur voluptate?
+                        </ParagraphBox>
+                    </Box>
+                    <Box>
+                        <FaChartPie size={"30px"} />
+                        <h3>Analytics</h3>
+                        <ParagraphBox>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Non incidunt inventore vitae necessitatibus
+                            consequuntur voluptate?
+                        </ParagraphBox>
+                    </Box>
+                </Boxes>
+                {/* info section */}
+                <Info>
+                    <BoxImage>
+                        {" "}
+                        <img
+                            src={LampBoardImage}
+                            width={500}
+                            height={300}
+                            alt="Image1"
+                        />
+                    </BoxImage>
+                    <div>
+                        <h2>Your business on the web</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Fugit explicabo facilis distinctio nesciunt
+                            incidunt, eius, tenetur quo, laboriosam voluptatum
+                            aliquid cum hic in vero. Quod reiciendis eum amet
+                            nesciunt deserunt?
+                        </p>
+                        <Button>Learn more</Button>
+                    </div>
+                </Info>
+                {/* portfoilio section */}
+                <Portfolio>
                     <img
-                        src={LampBoardImage}
-                        width={500}
-                        height={300}
-                        alt="Image1"
+                        src="http://source.unsplash.com/random/201x200"
+                        alt=""
                     />
-                </BoxImage>
-                <div>
-                    <h2>Your business on the web</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Fugit explicabo facilis distinctio nesciunt
-                        incidunt, eius, tenetur quo, laboriosam voluptatum
-                        aliquid cum hic in vero. Quod reiciendis eum amet
-                        nesciunt deserunt?
-                    </p>
-                    <Button>Learn more</Button>
-                </div>
-            </Info>
-            {/* portfoilio section */}
-            <Portfolio>
-                <img src="http://source.unsplash.com/random/201x200" alt="" />
-                <img src="http://source.unsplash.com/random/202x200" alt="" />
-                <img src="http://source.unsplash.com/random/203x200" alt="" />
-                <img src="http://source.unsplash.com/random/204x200" alt="" />
-                <img src="http://source.unsplash.com/random/205x200" alt="" />
-                <img src="http://source.unsplash.com/random/206x200" alt="" />
-                <img src="http://source.unsplash.com/random/207x200" alt="" />
-                <img src="http://source.unsplash.com/random/208x200" alt="" />
-                <img src="http://source.unsplash.com/random/209x200" alt="" />
-            </Portfolio>
-            <Footer>
-                <p>Grid website &copy;2022 from Stefan Nieuwenburg</p>
-            </Footer>
-            {/* Wrapper ends */}
-        </Wrapper>
+                    <img
+                        src="http://source.unsplash.com/random/202x200"
+                        alt=""
+                    />
+                    <img
+                        src="http://source.unsplash.com/random/203x200"
+                        alt=""
+                    />
+                    <img
+                        src="http://source.unsplash.com/random/204x200"
+                        alt=""
+                    />
+                    <img
+                        src="http://source.unsplash.com/random/205x200"
+                        alt=""
+                    />
+                    <img
+                        src="http://source.unsplash.com/random/206x200"
+                        alt=""
+                    />
+                    <img
+                        src="http://source.unsplash.com/random/207x200"
+                        alt=""
+                    />
+                    <img
+                        src="http://source.unsplash.com/random/208x200"
+                        alt=""
+                    />
+                    <img
+                        src="http://source.unsplash.com/random/209x200"
+                        alt=""
+                    />
+                </Portfolio>
+                <FooterCopyricht>
+                    © Copyright 2022 | Ontwikkeling door Stefan Nieuwenburg
+                    Services | Alle rechten voorbehouden.
+                </FooterCopyricht>
+                {/* Wrapper ends */}
+            </Wrapper>
+        </Fragment>
     );
 }
 

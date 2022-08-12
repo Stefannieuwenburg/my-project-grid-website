@@ -1,5 +1,7 @@
-/* CSS Variable */
-:root{
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  :root{
   --primary:#ddd;
   --dark:#333;
   --light:#fff;
@@ -11,13 +13,11 @@ html{
   color:var(--dark);
 }
 body{
-  background: linear-gradient(to right, #5a3f37, #2c7744);
+  background: linear-gradient(to right,#43494f, #4f6352);
   margin: 30px 50px;
 }
+`;
 
-
-
-
-
+export default GlobalStyle;
 
 
