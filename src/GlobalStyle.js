@@ -6,6 +6,21 @@ const GlobalStyle = createGlobalStyle`
   --dark:#333;
   --light:#fff;
   --shadow:0 1px 5px rgba(104,104,104,0.8)
+  --hover:'green';
+  --Red:'red';
+  --Orange:'orange';
+  --Yellow:'yellow';
+  --Olive:'olive';
+  --Green:'green';
+  --Teal:'teal';
+  --Blue:'blue';
+  --Violet:'violet';
+  --Purple:'purple';
+  --Pink:'pink';
+  --Brown:'brown';
+  --Grey:'grey';
+  --Black:'black';
+  --shadow:0 1px 5px rgba(104,104,104,0.8)
 }
 html{
   box-sizing: border-box;
@@ -14,7 +29,7 @@ html{
 }
 body{
   background: linear-gradient(to right,#43494f, #4f6352);
-  margin: 30px 50px;
+  margin: 10px;
 }
 `;
 

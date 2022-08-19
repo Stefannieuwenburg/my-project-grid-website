@@ -6,32 +6,34 @@ import LampBoardImage from "../src/Images/lampboard.jpg";
 import img from './Images/laptop.jpg'
 // import "./App.css";
 
-const Wrapper = styled.section`
+const AppContainer = styled.div`
     display: grid;
-    grid-gap: 20px;
-    margin: 10px 10px;
+    grid-gap: 2em;
+    margin: 0.1rem 1.0rem;
 `;
 
 const Nav = styled.div`
     a {
         display: block;
         text-decoration: none;
-        padding: 0.8rem;
+        padding: 0.2rem;
         color: var(--light);
         text-align: center;
         text-transform: uppercase;
         font-size: 1.1rem;
         box-shadow: var(--shadow);
-        border-radius: 20px;
+        border-radius: 10px;
         border: 3px solid green;
+        
     }
     a:hover {
         background: var(--dark);
     }
     ul {
         display: grid;
-        grid-gap: 10px;
+        grid-gap: 5px;
         list-style: none;
+        margin: 0.2rem 5.2rem;
         grid-template-columns: repeat(4, 1fr);
     }
     li {
@@ -42,18 +44,35 @@ const Nav = styled.div`
 `;
 
 const Button = styled.button`
-    a {
-        text-decoration: none;
-        color: var(--light);
-    }
+    color: whitesmoke;
     background: var(--dark);
-    color: var(--light);
     font-size: 1em;
     margin: 1em;
     padding: 0.6rem 1.3rem;
     border: 3px solid green;
     border-radius: 20px;
-    text-decoration: none;
+    &:hover {
+        background: var(--dark);
+    }
+    a {
+        text-decoration: none;
+    }
+`;
+const InfoButton = styled.button`
+    background: var(--light);
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.6rem 1.3rem;
+    border: 3px solid green;
+    border-radius: 20px;
+    &:hover {
+        background: var(--dark);
+        
+    }
+    a {
+        text-decoration: none;
+    }
+    
 `;
 
 const TopContainer = styled.section`
@@ -184,7 +203,7 @@ function App() {
     return (
         <Fragment>
             <GlobalStyle />
-            <Wrapper>
+            <AppContainer>
                 {/* Nav section */}
                 <Nav>
                     <ul>
@@ -205,7 +224,7 @@ function App() {
                 {/* Top Container */}
                 <TopContainer>
                     <Showcase>
-                        <Title>Your web presence</Title>
+                        <Title>logo </Title>
                         <Paragraph>
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Rem odio non libero, tempore provident unde.
@@ -217,16 +236,16 @@ function App() {
                     <TopBoxa>
                         <h4> Membership</h4>
                         <Price>$199/mo</Price>
-                        <Button>
+                        <InfoButton>
                             <a href="#5">buy now</a>
-                        </Button>
+                        </InfoButton>
                     </TopBoxa>
                     <TopBoxb>
                         <h4> Pro Membership</h4>
                         <Price>$299/mo</Price>
-                        <Button>
+                        <InfoButton>
                             <a href="#5">buy now</a>
-                        </Button>
+                        </InfoButton>
                     </TopBoxb>
                 </TopContainer>
                 {/* Boxes Section */}
@@ -335,7 +354,7 @@ function App() {
                     Services | Alle rechten voorbehouden.
                 </FooterCopyricht>
                 {/* Wrapper ends */}
-            </Wrapper>
+            </AppContainer>
         </Fragment>
     );
 }
