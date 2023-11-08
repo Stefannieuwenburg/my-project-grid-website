@@ -1,86 +1,29 @@
 import React, { Fragment } from "react";
 import GlobalStyle from "./GlobalStyle";
 import styled from "styled-components";
+import { motion } from "framer-motion"
 import { FaChartPie, FaGlobe, FaCog, FaUser } from "react-icons/fa";
 import LampBoardImage from "../src/Images/lampboard.jpg";
 import img from './Images/laptop.jpg'
-// import "./App.css";
+
 
 const AppContainer = styled.div`
     display: grid;
-    grid-gap: 2em;
-    margin: 0.1rem 1.0rem;
+    grid-gap: 2rem;
 `;
 
-const Nav = styled.div`
-    a {
-        display: block;
-        text-decoration: none;
-        padding: 0.2rem;
-        color: var(--light);
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 1.1rem;
-        box-shadow: var(--shadow);
-        border-radius: 10px;
-        border: 3px solid green;
-        
-    }
-    a:hover {
-        background: var(--dark);
-    }
-    ul {
-        display: grid;
-        grid-gap: 5px;
-        list-style: none;
-        margin: 0.2rem 5.2rem;
-        grid-template-columns: repeat(4, 1fr);
-    }
-    li {
-        font-size: 20px;
-        color: #61dafb;
-        text-decoration: none;
-    }
-`;
-
-const Button = styled.button`
-    color: whitesmoke;
-    background: var(--dark);
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.6rem 1.3rem;
-    border: 3px solid green;
-    border-radius: 20px;
-    &:hover {
-        background: var(--dark);
-    }
-    a {
-        text-decoration: none;
-    }
-`;
 const InfoButton = styled.button`
-    background: var(--light);
+    color: var(--black);
     font-size: 1em;
     margin: 1em;
     padding: 0.6rem 1.3rem;
-    border: 3px solid green;
+    border: 3px solid black;
     border-radius: 20px;
+    transition: all .5s ease;
     &:hover {
-        background: var(--dark);
-        
-    }
-    a {
-        text-decoration: none;
-    }
-    
-`;
-
-const TopContainer = styled.section`
-    display: grid;
-    grid-gap: 20px;
-    grid-template-areas:
-        "Showcase Showcase TopBoxa"
-        "Showcase Showcase TopBoxb";
+    color: #E38B06;
+    transform: traslateY(-3rem);
+}
 `;
 
 const Title = styled.h1`
@@ -90,8 +33,7 @@ const Title = styled.h1`
 `;
 
 const Showcase = styled.div`
-    grid-area: Showcase;
-    min-height: 400px;
+    width: "auto";
     background-image: linear-gradient(
             rgba(0, 0, 0, 0.342),
             rgba(0, 0, 0, 0.342)
@@ -99,47 +41,20 @@ const Showcase = styled.div`
         url(${img});
     background-size: cover;
     background-position: center;
-    padding: 3rem;
+    padding: 1.2rem;
+    margin: 1.2rem;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    box-shadow: var(--shadow);
-`;
-
-const TopBoxa = styled.div`
-    grid-area: TopBoxa;
-    box-shadow: var(--shadow);
-    padding: 1.5rem;
-    background: var(--primary);
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    border: 3px solid green;
-`;
-
-const TopBoxb = styled.div`
-    grid-area: TopBoxb;
-    box-shadow: var(--shadow);
-    padding: 1.5rem;
-    background: var(--primary);
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    border: 3px solid green;
+    box-shadow: var(--dark);
 `;
 
 const Paragraph = styled.p`
     font-size: 1.3rem;
     margin-top: 0;
     color: var(--light);
-`;
-
-const Price = styled.p`
-    font-size: 1.5rem;
 `;
 
 const Boxes = styled.div`
@@ -153,8 +68,12 @@ const Box = styled.div`
     text-align: center;
     padding: 1.5rem;
     box-shadow: var(--shadow);
-    border: 3px solid green;
+    border: 3px solid black;
     border-radius: 20px;
+    transition: all .5s ease;
+&:hover{
+    transform: scale(1.08);
+}
 `;
 
 const ParagraphBox = styled.p`
@@ -164,19 +83,24 @@ const ParagraphBox = styled.p`
 `;
 const Info = styled.section`
     background: var(--primary);
-    box-shadow: var(--shadow);
+    box-shadow: var(--dark);
     display: grid;
     grid-gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(2, 1fr));
     padding: 2rem;
     border-radius: 20px;
-    border: 3px solid green;
+    border: 3px solid black;
 `;
 const BoxImage = styled.div`
     img {
+        width:'auto';
         border-radius: 20px;
-        border: 3px solid green;
-    }
+        border: 3px solid black;
+        transition: all .5s ease;
+&:hover{
+    transform: scale(1.08);
+}
+}
 `;
 
 const Portfolio = styled.section`
@@ -184,12 +108,15 @@ const Portfolio = styled.section`
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     img {
-        width: 100%;
+        width:'auto';
         border-radius: 20px;
-        border: 3px solid green;
+        border: 3px solid black;
+        transition: all .5s ease;
+&:hover{
+    transform: scale(1.08);
+}
     }
 `;
-
 
 const FooterCopyricht = styled.p`
     margin-top: 1, 2rem;
@@ -204,50 +131,17 @@ function App() {
         <Fragment>
             <GlobalStyle />
             <AppContainer>
-                {/* Nav section */}
-                <Nav>
-                    <ul>
-                        <li>
-                            <a href="#2">Home</a>
-                        </li>
-                        <li>
-                            <a href="#3">About</a>
-                        </li>
-                        <li>
-                            <a href="#4">Service</a>
-                        </li>
-                        <li>
-                            <a href="#5">Contact</a>
-                        </li>
-                    </ul>
-                </Nav>
-                {/* Top Container */}
-                <TopContainer>
                     <Showcase>
                         <Title>logo </Title>
                         <Paragraph>
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Rem odio non libero, tempore provident unde.
                         </Paragraph>
-                        <Button>
-                            <a href="#l">Read More</a>
-                        </Button>
+                        <InfoButton>
+                            Read More
+                        </InfoButton>
                     </Showcase>{" "}
-                    <TopBoxa>
-                        <h4> Membership</h4>
-                        <Price>$199/mo</Price>
-                        <InfoButton>
-                            <a href="#5">buy now</a>
-                        </InfoButton>
-                    </TopBoxa>
-                    <TopBoxb>
-                        <h4> Pro Membership</h4>
-                        <Price>$299/mo</Price>
-                        <InfoButton>
-                            <a href="#5">buy now</a>
-                        </InfoButton>
-                    </TopBoxb>
-                </TopContainer>
+                    
                 {/* Boxes Section */}
                 <Boxes>
                     <Box>
@@ -288,6 +182,15 @@ function App() {
                     </Box>
                 </Boxes>
                 {/* info section */}
+                 <motion.div
+                        initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 1.5 }}
+                    variants={{
+                        hidden: { opacity: 0, y: 50 },
+                        visible: { opacity: 1, y: 0 },
+                        }}>
                 <Info>
                     <BoxImage>
                         {" "}
@@ -307,10 +210,20 @@ function App() {
                             aliquid cum hic in vero. Quod reiciendis eum amet
                             nesciunt deserunt?
                         </p>
-                        <Button>Learn more</Button>
+                        <InfoButton>Learn more</InfoButton>
                     </div>
-                </Info>
+                    </Info>
+                     </motion.div>
                 {/* portfoilio section */}
+                <motion.div
+                        initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 1.5 }}
+                    variants={{
+                        hidden: { opacity: 0, y: 50 },
+                        visible: { opacity: 1, y: 0 },
+                        }}>
                 <Portfolio>
                     <img
                         src="http://source.unsplash.com/random/201x200"
@@ -348,7 +261,8 @@ function App() {
                         src="http://source.unsplash.com/random/209x200"
                         alt=""
                     />
-                </Portfolio>
+                    </Portfolio>
+                    </motion.div>
                 <FooterCopyricht>
                     © Copyright 2022 | Ontwikkeling door Stefan Nieuwenburg
                     Services | Alle rechten voorbehouden.

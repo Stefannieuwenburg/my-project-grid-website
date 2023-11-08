@@ -5,21 +5,19 @@ const GlobalStyle = createGlobalStyle`
   --primary:#ddd;
   --dark:#333;
   --light:#fff;
-  --shadow:0 1px 5px rgba(104,104,104,0.8)
-  --hover:'green';
-  --Red:'red';
-  --Orange:'orange';
-  --Yellow:'yellow';
-  --Olive:'olive';
-  --Green:'green';
-  --Teal:'teal';
-  --Blue:'blue';
-  --Violet:'violet';
-  --Purple:'purple';
-  --Pink:'pink';
-  --Brown:'brown';
-  --Grey:'grey';
-  --Black:'black';
+  --red:'#ED553B';
+  --orange:'orange';
+  --yellow:'#F6D55C';
+  --olive:'olive';
+  --green:'#3CAEA3';
+  --teal:'teal';
+  --blue:'#173F5F';
+  --violet:'violet';
+  --purple:'purple';
+  --pink:'pink';
+  --brown:'brown';
+  --grey:'grey';
+  --black:'#000000';
   --shadow:0 1px 5px rgba(104,104,104,0.8)
 }
 html{
@@ -28,7 +26,7 @@ html{
   color:var(--dark);
 }
 body{
-  background: linear-gradient(to right,#43494f, #4f6352);
+  background: linear-gradient(to right,#868e96, #595e63);
   margin: 10px;
 }
 `;

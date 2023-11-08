@@ -4,6 +4,7 @@ my project build a responsive grid website:
 
 installing styled-components
 React icons Font Awesome icons
+Farmer-motion animations
 
 
 # Getting Started with Create React App
